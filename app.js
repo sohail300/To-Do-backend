@@ -1,7 +1,7 @@
 // requires
 const express = require("express");
 const bodyParser=require("body-parser");
-
+const ejs=require("ejs");
 const mongoose=require('mongoose');         // Requires mongoose
 
 const _ = require("lodash");
@@ -102,6 +102,7 @@ app.get('/about',function(request,response){
     response.render('about');
 })
 
-app.listen(4500,function(){
-    console.log("Running on port 4500");
+const port=(process.env.PORT || 4500)
+app.listen(port,function(){
+    console.log(`Running on port ${port}`);
 });
